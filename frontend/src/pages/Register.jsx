@@ -15,6 +15,11 @@ export const Register = () => {
   const handleRegister = async(e) => {
     e.preventDefault();
 
+    if(!name){
+      setError('Please enter name');
+      return;
+    }
+
     if(!validemail(email)) {
       setError("Please enter valid email");
       return;
